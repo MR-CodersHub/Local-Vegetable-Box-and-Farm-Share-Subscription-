@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page Not Found — HarvestBox. The page you are looking for has been harvested or moved.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0E3B2C">
+  <title>404 Page Not Found — HarvestBox</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <script src="assets/js/icons.js"></script>
+  <style>
+    .error-page { min-height:80svh; display:flex; align-items:center; justify-content:center; text-align:center; padding:4rem var(--container-pad); background:var(--bg-primary); }
+    .error-code { font-family:var(--font-serif); font-size:clamp(6rem,15vw,12rem); font-weight:900; line-height:1; background:var(--grad-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:1rem; }
+    .error-icon-box { display:flex; justify-content:center; align-items:center; margin-bottom:1rem; color:var(--color-forest); }
+    /* Responsive */
+    @media (max-width: 480px) {
+      .error-page { padding:2.5rem var(--container-pad); }
+      .error-code { font-size:clamp(4.5rem,22vw,6rem); }
+      form[role="search"] { flex-direction:column !important; max-width:100% !important; align-items:stretch; }
+      form[role="search"] input { min-width:0 !important; }
+      form[role="search"] button { width:100%; }
+      .error-page .btn { width:100%; }
+    }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="page-loader" aria-hidden="true"><div class="loader-logo"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> HarvestBox</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+<div id="page-transition" aria-hidden="true"></div>
+<div class="toast-container" aria-live="polite"></div>
+
+<main id="main-content">
+
+  <!-- ══ SECTION 1: ERROR HERO ══ -->
+  <section class="error-page" aria-labelledby="error-heading">
+    <div class="container" style="max-width:640px;">
+      <div class="error-code" data-reveal="fade-up">404</div>
+      <h1 class="section-title" id="error-heading" data-reveal="fade-up" data-delay="100">Looks Like This Page Was <span class="highlight">Harvested!</span></h1>
+      <p style="color:var(--text-secondary);margin-bottom:2rem;line-height:var(--lh-relaxed);font-size:var(--text-lg);" data-reveal="fade-up" data-delay="150">The URL you requested could not be found. It might have been moved, renamed, or is temporarily out of stock.</p>
+
+      <!-- Search box -->
+      <form action="blog.html" method="get" style="display:flex;background:var(--bg-card);border:1.5px solid var(--border-color);border-radius:var(--radius-full);overflow:hidden;margin:0 auto 2.5rem;max-width:440px;box-shadow:var(--shadow-sm);" role="search" aria-label="Search site" data-reveal="fade-up" data-delay="200">
+        <label for="error-search-input" class="sr-only">Search</label>
+        <input type="search" id="error-search-input" name="q" placeholder="Search vegetables, fruits, recipes…" style="flex:1;border:none;padding:0.75rem 1.25rem;outline:none;font-size:var(--text-sm);color:var(--text-primary);background:transparent;">
+        <button type="submit" style="background:var(--color-forest);color:white;border:none;padding:0.75rem 1.25rem;font-weight:600;cursor:pointer;">Search</button>
+      </form>
+
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;" data-reveal="fade-up" data-delay="250">
+        <a href="index.html" class="btn btn-primary btn-lg">Back to Homepage</a>
+        <a href="weekly-box.html" class="btn btn-outline btn-lg">See This Week's Box</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/utils.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your HarvestBox account — pick a farm-share box plan and manage weekly deliveries, pauses and billing.">
+  <meta name="theme-color" content="#0E3B2C">
+  <link rel="canonical" href="signup.html">
+  <title>Sign Up — HarvestBox</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="auth-page">
+  <a href="#signup-form" class="skip-link">Skip to sign up form</a>
+
+  <main class="auth-card auth-card--wide" aria-labelledby="signup-heading">
+    <a class="auth-brand" href="index.html" aria-label="HarvestBox — back to homepage">
+      <div class="logo-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+      <div>
+        <div class="auth-brand-name">HarvestBox</div>
+        <div class="auth-brand-sub">Farm Share Weekly</div>
+      </div>
+    </a>
+
+    <h1 class="auth-title" id="signup-heading">Create Account</h1>
+    <p class="auth-sub">Create an account to get started.</p>
+
+    <form id="signup-form" novalidate aria-label="Sign up form">
+      <div class="auth-field">
+        <label class="form-label" for="signup-name">Full Name</label>
+        <input class="form-control" type="text" id="signup-name" name="name" placeholder="Priya Sharma" autocomplete="name" data-validate="required" aria-describedby="signup-name-error">
+        <div class="form-error" id="signup-name-error" role="alert"></div>
+      </div>
+
+      <div class="auth-field">
+        <label class="form-label" for="signup-email">Email Address</label>
+        <input class="form-control" type="email" id="signup-email" name="email" placeholder="you@example.com" autocomplete="email" data-validate="required|email" aria-describedby="signup-email-error">
+        <div class="form-error" id="signup-email-error" role="alert"></div>
+      </div>
+
+      <div class="auth-field">
+        <label class="form-label" for="signup-phone">Phone Number</label>
+        <input class="form-control" type="tel" id="signup-phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" data-validate="required" aria-describedby="signup-phone-error">
+        <div class="form-error" id="signup-phone-error" role="alert"></div>
+      </div>
+
+      <div class="auth-plan-label">
+        <span class="form-label" id="plan-group-label">Choose your box</span>
+        <div class="plan-pick" role="radiogroup" aria-labelledby="plan-group-label">
+          <label><input type="radio" name="plan" value="Mini Box"><span>Mini<br><small>₹349 / box</small></span></label>
+          <label><input type="radio" name="plan" value="Family Box" checked><span>Family<br><small>₹599 / box</small></span></label>
+          <label><input type="radio" name="plan" value="Harvest Feast"><span>Feast<br><small>₹899 / box</small></span></label>
+        </div>
+      </div>
+
+      <div class="auth-field">
+        <label class="form-label" for="signup-pass">Password</label>
+        <div class="password-wrap">
+          <input class="form-control" type="password" id="signup-pass" name="password" placeholder="Min. 6 characters" autocomplete="new-password" data-validate="required|minLength:6" aria-describedby="signup-pass-error">
+          <button type="button" class="password-toggle" data-toggle-password="signup-pass" aria-label="Show password" aria-pressed="false">
+            <svg class="icon-svg icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="icon-svg icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <div class="form-error" id="signup-pass-error" role="alert"></div>
+      </div>
+
+      <div class="auth-field">
+        <label class="form-label" for="signup-confirm">Confirm Password</label>
+        <div class="password-wrap">
+          <input class="form-control" type="password" id="signup-confirm" name="confirm" placeholder="Repeat your password" autocomplete="new-password" data-validate="required" aria-describedby="signup-confirm-error">
+          <button type="button" class="password-toggle" data-toggle-password="signup-confirm" aria-label="Show password" aria-pressed="false">
+            <svg class="icon-svg icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="icon-svg icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <div class="form-error" id="signup-confirm-error" role="alert"></div>
+      </div>
+
+      <label class="auth-check" for="signup-terms">
+        <input type="checkbox" id="signup-terms" name="terms">
+        <span>I agree to the <a class="auth-link" href="terms.html">Terms &amp; Conditions</a> and <a class="auth-link" href="privacy-policy.html">Privacy Policy</a>.</span>
+      </label>
+      <div class="form-error" id="signup-terms-error" role="alert" style="margin:-1rem 0 1rem;"></div>
+
+      <button type="submit" class="btn btn-primary btn-lg w-full">Create Account</button>
+
+      <div class="auth-divider" aria-hidden="true">or sign up with</div>
+
+      <div class="social-row">
+        <a class="btn btn-outline" href="https://www.google.com" target="_blank" rel="noopener" aria-label="Sign up with Google">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/></svg>
+          Google
+        </a>
+        <a class="btn btn-outline" href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Sign up with Facebook">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M24 12.07C24 5.45 18.63.07 12 .07S0 5.45 0 12.07c0 5.99 4.39 10.95 10.13 11.86v-8.38H7.08v-3.47h3.05V9.43c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.96.92-1.96 1.87v2.25h3.33l-.53 3.47h-2.8v8.38C19.61 23.03 24 18.06 24 12.07z"/></svg>
+          Facebook
+        </a>
+        <a class="btn btn-outline" href="https://www.apple.com" target="_blank" rel="noopener" aria-label="Sign up with Apple">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+          Apple
+        </a>
+      </div>
+
+      <p class="auth-redirect">Already have an account? <a class="auth-link" href="login.html">Sign In</a></p>
+    </form>
+  </main>
+
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

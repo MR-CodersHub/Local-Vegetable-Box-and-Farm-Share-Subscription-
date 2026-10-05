@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="10 Seasonal Vegetables You Must Eat This Monsoon — HarvestBox Blog. Expert guide to immune-boosting monsoon vegetables.">
+  <meta property="og:title" content="10 Seasonal Vegetables This Monsoon — HarvestBox Blog">
+  <meta name="theme-color" content="#0E3B2C">
+  <link rel="canonical" href="blog-details.html">
+  <title>10 Seasonal Vegetables This Monsoon — HarvestBox Blog</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <script src="assets/js/icons.js"></script>
+  <style>
+    .reading-progress { position:fixed; top:0; left:0; right:0; height:3px; background:var(--border-color); z-index:calc(var(--z-sticky) + 10); }
+    .reading-progress-bar { height:100%; background:var(--grad-primary); width:0%; transition:width 0.1s; }
+    .article-body { max-width:760px; margin:0 auto; }
+    .article-body h2 { font-family:var(--font-serif); font-size:var(--text-3xl); color:var(--text-primary); margin:2rem 0 1rem; }
+    .article-body h3 { font-family:var(--font-serif); font-size:var(--text-2xl); color:var(--text-primary); margin:1.75rem 0 0.875rem; }
+    .article-body p { color:var(--text-secondary); line-height:var(--lh-loose); margin-bottom:1.25rem; }
+    .article-body ul, .article-body ol { color:var(--text-secondary); line-height:var(--lh-relaxed); margin-bottom:1.25rem; padding-left:1.5rem; }
+    .article-body li { margin-bottom:0.5rem; }
+    .pull-quote { border-left:4px solid var(--color-leaf); padding:1rem 1.5rem; background:var(--color-forest-50); border-radius:0 var(--radius-lg) var(--radius-lg) 0; margin:2rem 0; font-family:var(--font-serif); font-size:var(--text-xl); font-style:italic; color:var(--color-forest); line-height:var(--lh-relaxed); }
+    [data-theme="dark"] .pull-quote { background:rgba(14,59,44,0.2); color:#8FD8A8; }
+    .recipe-box { background:var(--color-forest-50); border:1px solid var(--color-forest-200); border-radius:var(--radius-2xl); padding:2rem; margin:2rem 0; }
+    [data-theme="dark"] .recipe-box { background:rgba(14,59,44,0.2); border-color:var(--border-color); }
+    .recipe-box h3 { color:var(--color-forest); margin-bottom:1rem; }
+    .article-img-inline { border-radius:var(--radius-xl); overflow:hidden; margin:1.5rem 0; }
+    .share-bar { position:sticky; bottom:1.5rem; display:flex; justify-content:center; pointer-events:none; }
+    .share-bar-inner { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius-full); padding:0.5rem 1rem; display:flex; gap:0.5rem; align-items:center; pointer-events:all; box-shadow:var(--shadow-xl); }
+    .share-btn { width:36px; height:36px; border:none; background:var(--bg-secondary); border-radius:var(--radius-full); cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:all var(--dur-fast); color:var(--text-primary); }
+    .share-btn:hover { background:var(--color-forest); color:white; transform:scale(1.1); }
+    .toc-nav { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius-xl); padding:1.5rem; margin-bottom:2rem; }
+    .toc-nav h4 { font-size:var(--text-sm); font-weight:700; letter-spacing:var(--ls-wider); text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem; }
+    .toc-nav ol { padding-left:1.25rem; }
+    .toc-nav li { margin-bottom:0.5rem; }
+    .toc-nav a { font-size:var(--text-sm); color:var(--text-secondary); transition:color var(--dur-fast); }
+    .toc-nav a:hover, .toc-nav a.active { color:var(--color-forest); }
+    .comment-form-wrap { background:var(--bg-secondary); border-radius:var(--radius-2xl); padding:2rem; }
+    .comment-card { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius-xl); padding:1.25rem; margin-bottom:1rem; }
+
+    /* ================================================================
+       RESPONSIVE — BLOG DETAILS (page-specific)
+       ================================================================ */
+
+    /* ≤1024: stack article + 280px sidebar */
+    @media (max-width: 1024px) {
+      div[style*="grid-template-columns:1fr 280px"] {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+      }
+      aside[style*="position:sticky"] {
+        position: static !important;
+      }
+    }
+
+    /* ≤768: sidebar blocks → 2 columns; tighten gaps */
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns:1fr 280px"] {
+        gap: 2rem !important;
+      }
+      aside[style*="position:sticky"] {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+      }
+      aside[style*="position:sticky"] > :nth-child(3) { grid-column: 1 / -1; }
+      .toc-nav { margin-bottom: 0; }
+      #p-author-card { margin-bottom: 0 !important; }
+    }
+
+    /* ≤640: 2-col grids → 1 col; author bio wraps */
+    @media (max-width: 640px) {
+      div[style*="grid-template-columns:1fr 1fr;gap:2rem"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      div[style*="grid-template-columns:1fr 1fr;gap:1rem"] {
+        grid-template-columns: 1fr !important;
+      }
+      div[style*="padding:2rem;display:flex;gap:1.5rem;align-items:start"] {
+        flex-wrap: wrap !important;
+      }
+    }
+
+    /* ≤480: single-column sidebar; compact hero & cards */
+    @media (max-width: 480px) {
+      div[style*="grid-template-columns:1fr 280px"] {
+        gap: 1.5rem !important;
+      }
+      aside[style*="position:sticky"] {
+        grid-template-columns: 1fr !important;
+      }
+      section[style*="padding:calc(var(--navbar-h) + 3rem)"] {
+        padding: calc(var(--navbar-h) + 1.5rem) 0 1.5rem !important;
+      }
+      #article-heading { font-size: clamp(1.75rem, 7vw, 2.25rem) !important; }
+      .pull-quote { padding: 0.75rem 1rem; font-size: var(--text-lg); }
+      .recipe-box { padding: 1.25rem; }
+      .comment-form-wrap { padding: 1.25rem; }
+      div[style*="padding:2rem;display:flex;gap:1.5rem;align-items:start"] {
+        padding: 1.25rem !important;
+        gap: 1.25rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Reading Progress -->
+<div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar" id="reading-bar"></div></div>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="page-loader" aria-hidden="true"><div class="loader-logo"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> HarvestBox</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+<div id="page-transition" aria-hidden="true"></div>
+<div class="toast-container" aria-live="polite"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer"><div class="lightbox-inner"><button class="lightbox-close" aria-label="Close">✕</button><img class="lightbox-img" src="" alt=""></div></div>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="HarvestBox Home">
+        <div class="logo-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <div class="logo-text"><span class="logo-main">HarvestBox</span><span class="logo-sub">Farm Share Weekly</span></div>
+      </a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="weekly-box.html" class="nav-link">This Week’s Box<svg class="icon-svg nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="nav-dropdown"><a href="farms.html" class="dropdown-link"><span class="dd-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>Our Farms</a></div></li>
+        <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="nav-icon-btn theme-toggle" id="theme-btn" aria-label="Toggle dark mode"><span class="theme-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button>
+        <button class="nav-icon-btn rtl-toggle rtl-btn" id="rtl-btn" aria-label="Toggle RTL/LTR">RTL</button>
+        <div class="profile-menu"><button class="nav-icon-btn profile-btn" type="button" aria-label="Account" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-dropdown"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button><div class="nav-dropdown profile-dropdown" id="profile-dropdown" role="menu" aria-label="Account"><a href="login.html" class="dropdown-link" role="menuitem"><span class="dd-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></span>Login</a><a href="signup.html" class="dropdown-link" role="menuitem"><span class="dd-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg></span>Sign Up</a><a href="subscriber-dashboard.html" class="dropdown-link" role="menuitem"><span class="dd-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></span>Subscriber Dashboard</a><a href="admin-dashboard.html" class="dropdown-link" role="menuitem"><span class="dd-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>Admin Dashboard</a></div></div><a href="weekly-box.html" class="nav-cta">Get Farm Box</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="navbar-logo"><div class="logo-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><div class="logo-text"><span class="logo-main">HarvestBox</span><span class="logo-sub">Farm Share Weekly</span></div></a>
+      <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Home</a>
+      <a href="home2.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/></svg> Home 2</a>
+      <a href="about.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/></svg> About</a>
+      <a href="services.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13" rx="2"/></svg> Services</a>
+      <a href="service-details.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/></svg> Service Details</a>
+      <a href="weekly-box.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> This Week’s Box</a>
+      <a href="farms.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 20h10"/><path d="M12 20v-9"/></svg> Our Farms</a>
+      <a href="pricing.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 1v22"/></svg> Pricing</a>
+      <a href="blog.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10"/></svg> Blog</a>
+      <a href="contact.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg> Contact</a>
+      <a href="login.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/></svg> Login</a>
+      <a href="signup.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/></svg> Sign Up</a>
+      <a href="subscriber-dashboard.html" class="mobile-nav-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9"/></svg> My Dashboard</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="pricing.html" class="mobile-cta"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Get Your Farm Box</a>
+      <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.75rem;flex-wrap:wrap;font-size:0.8rem;">
+        <a href="login.html" style="color:var(--color-forest);font-weight:600;">Login</a><span style="opacity:0.4;">|</span><a href="signup.html" style="color:var(--color-forest);font-weight:600;">Sign Up</a><span style="opacity:0.4;">|</span><a href="subscriber-dashboard.html" style="color:var(--color-forest);font-weight:600;">Dashboard</a>
+      </div>
+      <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1rem;">
+        <button class="theme-toggle nav-icon-btn" aria-label="Toggle theme"><span class="theme-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button>
+        <button class="rtl-toggle nav-icon-btn rtl-btn" aria-label="Toggle direction">RTL</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <!-- ══ SECTION 1: ARTICLE HERO ══ -->
+  <section class="page-hero" aria-labelledby="article-heading">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="page-hero-badge"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/></svg> Seasonal Harvest &amp; Nutrition Guide</div>
+      <h1 class="page-hero-title" id="article-heading">10 Seasonal Vegetables<br><em>To Nourish Your Monsoon</em></h1>
+      <p class="page-hero-subtitle" style="margin-bottom:1.5rem;">Doctor-curated heirloom greens, immunity-boosting root vegetables, and traditional recipes for your weekly harvest box.</p>
+      <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;color:rgba(255,255,255,0.85);font-size:var(--text-sm);justify-content:center;" id="p-hero-meta">
+        <div style="display:flex;align-items:center;gap:0.5rem;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Dr. Anita Sharma</span></div>
+        <div><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> August 10, 2026</div>
+        <div><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min read</div>
+        <div>8,240 views</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: ARTICLE BODY ══ -->
+  <section class="section bg-primary" aria-label="Article content">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 280px;gap:3rem;align-items:start;">
+
+        <!-- Main Article -->
+        <article class="article-body" itemscope itemtype="https://schema.org/Article">
+          <meta itemprop="datePublished" content="2026-08-10">
+          <meta itemprop="author" content="Dr. Anita Sharma">
+
+          <div class="article-img-inline" id="p-hero-img">
+            <img src="assets/images/gen_home2_vegetables.png" alt="Colourful monsoon vegetables arranged on a wooden surface" class="zoomable" data-zoom="assets/images/gen_home2_vegetables.png" style="width:100%;border-radius:var(--radius-xl);">
+          </div>
+
+          <div id="p-article-body">
+          <p itemprop="description">Monsoon is nature's gift to the vegetable kingdom. As the rains nourish the earth, a spectacular array of nutrition-dense vegetables come into season — vegetables that have evolved alongside the rainy season and are perfectly suited to keep your body strong when it's most vulnerable.</p>
+
+          <div class="pull-quote">"Eating with the seasons isn't just tradition — it's the most intelligent nutrition strategy modern science knows of."</div>
+
+          <h2 id="why-seasonal" data-spy="why-seasonal">Why Eat Seasonal Monsoon Vegetables?</h2>
+          <p>Seasonal vegetables are harvested at peak ripeness, contain maximum nutrients, are naturally lower in cost, and are available at their freshest. During monsoon, the body's digestive system slightly weakens — exactly when nature provides lighter, easier-to-digest vegetables to compensate.</p>
+
+          <h2 id="top-10" data-spy="top-10">The Top 10 Monsoon Vegetables</h2>
+
+          <h3>1. Bitter Gourd (Karela)</h3>
+          <p>Often avoided for its bitterness, karela is a monsoon powerhouse. It's rich in iron, magnesium, potassium, and vitamins A and C. Studies show bitter gourd has anti-diabetic properties and helps regulate blood sugar — critical when sweet monsoon cravings are strong.</p>
+          <p><strong>How to eat it:</strong> Stuffed and pan-fried, in dal, or as a juice with ginger and lemon.</p>
+
+          <h3>2. Bottle Gourd (Lauki)</h3>
+          <p>Light, easy to digest, and extremely hydrating — bottle gourd is exactly what your body needs during rainy season. With 96% water content and generous fibre, it keeps digestion smooth and prevents the bloating many experience in monsoon.</p>
+
+          <h3>3. Drumstick (Moringa)</h3>
+          <p>Moringa pods are among the most nutritionally dense foods on earth. They contain 4x the calcium of milk, 7x the Vitamin C of oranges, and a complete amino acid profile. Monsoon is their natural harvest season in South India.</p>
+
+          <div class="recipe-box" aria-label="Monsoon Immunity Shot recipe">
+            <h3 style="display:flex;align-items:center;gap:0.5rem;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Quick Monsoon Immunity Shot</h3>
+            <p style="color:var(--text-secondary);font-size:var(--text-sm);margin-bottom:1rem;">Ready in 5 minutes. Serves 2.</p>
+            <ul style="color:var(--text-secondary);list-style:disc;padding-left:1.25rem;font-size:var(--text-sm);">
+              <li>2 tbsp fresh turmeric juice</li>
+              <li>1 tsp ginger paste</li>
+              <li>1 tbsp moringa powder</li>
+              <li>Juice of 1 lemon</li>
+              <li>1 tsp raw honey</li>
+              <li>150ml warm water</li>
+            </ul>
+            <p style="color:var(--text-secondary);font-size:var(--text-sm);margin-top:1rem;"><strong>Method:</strong> Blend all ingredients, strain if desired, drink immediately on an empty stomach.</p>
+          </div>
+
+          <h3>4. Ridge Gourd (Turai)</h3>
+          <p>Turai is rich in dietary fibre and has proven anti-inflammatory properties. It's particularly good for liver detox — important during monsoon when waterborne infections peak and your liver works overtime.</p>
+
+          <h3>5. Onions</h3>
+          <p>Fresh monsoon onions are exceptionally high in quercetin, a powerful anti-allergy and anti-inflammatory flavonoid. They're a natural antibiotic and have been used in traditional medicine across India for centuries during monsoon months.</p>
+
+          <h3>6. Fenugreek (Methi) Leaves</h3>
+          <p>Fresh methi floods the markets during monsoon and for good reason. It's rich in iron, folic acid, and soluble fibre. Methi is particularly recommended for diabetics and those with digestive issues — both common monsoon complaints.</p>
+
+          <h3>7. Amaranth Leaves (Lal Saag)</h3>
+          <p>This crimson-coloured leafy green is a protein powerhouse. With 15g of protein per 100g and generous iron and calcium, amaranth was the superfood of ancient civilizations — and it deserves its revival in your kitchen.</p>
+
+          <h3>8. Cluster Beans (Guar)</h3>
+          <p>High in soluble fibre and an excellent source of dietary proteins, cluster beans have impressive blood-sugar-lowering properties. They're also rich in iron and vitamin K, both often depleted during monsoon waterborne illnesses.</p>
+
+          <h3>9. Raw Turmeric</h3>
+          <p>Fresh (raw) turmeric root, harvested in monsoon, is 5x more potent than the dried powder. Curcumin — its active compound — is the most researched natural anti-inflammatory compound known. Grate it raw into rice, dal, or golden milk.</p>
+
+          <h3>10. Colocasia (Arbi)</h3>
+          <p>These taro root corms are monsoon-specific and incredibly nutritious. High in resistant starch that feeds beneficial gut bacteria, arbi supports the gut immunity that's most under threat during wet season.</p>
+
+          <div class="pull-quote">"Add all 10 of these to your HarvestBox this week — they rotate through seasonal farm boxes from our the Nilgiris and Salem partner farms."</div>
+
+          <h2 id="shopping" data-spy="shopping">Where to Get Them Fresh</h2>
+          <p>All 10 of these vegetables rotate through HarvestBox seasonal farm boxes, sourced from certified organic farms within a 150km radius. Subscribers swap them into their weekly box before Thursday 10 PM — harvest-packed Friday, delivered Sunday &amp; Tuesday.</p>
+          <div style="margin-top:1.5rem;">
+            <a href="weekly-box.html" class="btn btn-primary btn-lg">Customize This Week's Box →</a>
+          </div>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside style="position:sticky;top:calc(var(--navbar-h) + 1rem);" aria-label="Article sidebar">
+
+          <!-- TOC -->
+          <nav class="toc-nav" aria-label="Table of contents">
+            <h4>Table of Contents</h4>
+            <ol id="p-toc">
+              <li><a href="#why-seasonal" data-spy="why-seasonal">Why Eat Seasonal?</a></li>
+              <li><a href="#top-10" data-spy="top-10">Top 10 Vegetables</a></li>
+              <li><a href="#shopping" data-spy="shopping">Where to Buy</a></li>
+            </ol>
+          </nav>
+
+          <!-- Author Card -->
+          <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.5rem;margin-bottom:1.5rem;" id="p-author-card">
+            <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:1rem;">
+              <div style="width:52px;height:52px;background:var(--color-forest-50);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--color-forest);flex-shrink:0;" aria-hidden="true"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div>
+                <div style="font-weight:600;color:var(--text-primary);font-size:var(--text-sm);">Dr. Anita Sharma</div>
+                <div style="font-size:var(--text-xs);color:var(--color-leaf);">Chief Quality Officer</div>
+              </div>
+            </div>
+            <p style="font-size:var(--text-xs);color:var(--text-secondary);line-height:var(--lh-relaxed);">PhD Food Science, IIT Delhi. 10+ years in food safety research. Passionate about seasonal nutrition and organic farming.</p>
+          </div>
+
+          <!-- Quick Order -->
+          <div style="background:#0E3B2C;border-radius:var(--radius-xl);padding:1.5rem;color:white;">
+            <div style="display:flex;align-items:center;margin-bottom:0.5rem;color:white;" aria-hidden="true"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+            <h4 style="font-family:var(--font-serif);color:white;margin-bottom:0.5rem;">Order These Today</h4>
+            <p style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);margin-bottom:1rem;">All 10 vegetables from this article rotate through seasonal farm boxes — add them from This Week's Box.</p>
+            <a href="weekly-box.html" class="btn btn-gold w-full" style="text-align:center;">See This Week's Box →</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3: RECIPE CARD ══ -->
+  <section class="section" style="background:var(--bg-secondary);" aria-labelledby="recipe-section-heading" id="recipe-section">
+    <div class="container" style="max-width:760px;" id="p-recipe">
+      <div class="section-label" data-reveal="fade-up"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 11a8 8 0 0 0 16 0H4z"/><path d="M6 9c0-3 3-5 6-5s6 2 6 5"/></svg> Featured Recipe</div>
+      <h2 class="section-title" id="recipe-section-heading" data-reveal="fade-up" data-delay="100">Monsoon <span class="highlight">Immunity Bowl</span></h2>
+      <div class="recipe-box" data-reveal="fade-up" data-delay="200" itemscope itemtype="https://schema.org/Recipe">
+        <meta itemprop="name" content="Monsoon Immunity Bowl">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+          <div>
+            <h3 itemprop="recipeIngredient" style="color:var(--color-forest);display:flex;align-items:center;gap:0.375rem;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 11a8 8 0 0 0 16 0H4z"/><path d="M6 9c0-3 3-5 6-5s6 2 6 5"/></svg> Ingredients</h3>
+            <ul style="color:var(--text-secondary);font-size:var(--text-sm);list-style:disc;padding-left:1.25rem;">
+              <li itemprop="recipeIngredient">200g bitter gourd, sliced thin</li>
+              <li itemprop="recipeIngredient">1 cup bottle gourd cubes</li>
+              <li itemprop="recipeIngredient">2 moringa pods, sliced</li>
+              <li itemprop="recipeIngredient">Handful of fresh methi leaves</li>
+              <li itemprop="recipeIngredient">1-inch raw turmeric, grated</li>
+              <li itemprop="recipeIngredient">2 tbsp coconut oil</li>
+              <li itemprop="recipeIngredient">Salt, cumin, mustard seeds</li>
+              <li itemprop="recipeIngredient">Juice of half a lime</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="color:var(--color-forest);display:flex;align-items:center;gap:0.375rem;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Details</h3>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:var(--text-sm);color:var(--text-secondary);">
+              <div>Serves: <strong>2</strong></div>
+              <div>Prep: <strong>10 minutes</strong></div>
+              <div>Cook: <strong>20 minutes</strong></div>
+              <div>Calories: <strong>~180 kcal</strong></div>
+              <div>Difficulty: <strong>Easy</strong></div>
+            </div>
+            <a href="blog-details.html?post=monsoon-vegetables" class="btn btn-primary" style="margin-top:1rem;">Full Recipe →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4: AUTHOR BIO ══ -->
+  <section class="section bg-primary" aria-label="About the author">
+    <div class="container" style="max-width:760px;">
+      <div class="section-label" data-reveal="fade-up"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> About the Author</div>
+      <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-2xl);padding:2rem;display:flex;gap:1.5rem;align-items:start;" data-reveal="fade-up" data-delay="100">
+        <div style="width:80px;height:80px;background:var(--color-forest-50);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--color-forest);flex-shrink:0;" aria-hidden="true"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <h3 style="font-family:var(--font-serif);font-size:var(--text-2xl);color:var(--text-primary);margin-bottom:0.375rem;" id="p-bio-name">Dr. Anita Sharma</h3>
+          <div style="color:var(--color-leaf);font-size:var(--text-sm);font-weight:600;margin-bottom:0.75rem;" id="p-bio-role">Chief Quality Officer, HarvestBox | PhD Food Science, IIT Delhi</div>
+          <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--lh-relaxed);margin-bottom:1rem;" id="p-bio-text">Anita has spent 10+ years researching food safety and seasonal nutrition. She believes that understanding what to eat and when is the most accessible form of preventive medicine available to everyone.</p>
+          <div style="display:flex;gap:0.5rem;">
+            <a href="#" class="btn btn-outline btn-sm" aria-label="Follow on Twitter">Follow</a>
+            <a href="blog.html" class="btn btn-outline btn-sm">More Articles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5: RELATED POSTS ══ -->
+  <section class="section" style="background:var(--bg-secondary);" aria-labelledby="related-posts-heading">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/></svg> You May Also Like</div>
+        <h2 class="section-title" id="related-posts-heading">Related <span class="highlight">Articles</span></h2>
+      </div>
+      <div class="grid-3" id="p-related">
+        <article class="blog-card" data-reveal="fade-up" data-delay="100">
+          <div class="blog-card-img" style="background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/blog_immunity.jpg" alt="Immunity Boosting Vegetables" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Jul 28, 2026</span></div>
+            <h3 class="blog-title"><a href="blog-details.html">Top 8 Vegetables That Naturally Boost Immunity</a></h3>
+            <a href="blog-details.html" class="blog-read-more">Read More →</a>
+          </div>
+        </article>
+        <article class="blog-card" data-reveal="fade-up" data-delay="200">
+          <div class="blog-card-img" style="background:#FBEEDF;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/blog_recipes.jpg" alt="Farm to Table Recipes" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Aug 7, 2026</span></div>
+            <h3 class="blog-title"><a href="blog-details.html">Farm-to-Table Recipes Using Only Local Produce</a></h3>
+            <a href="blog-details.html" class="blog-read-more">Read More →</a>
+          </div>
+        </article>
+        <article class="blog-card" data-reveal="fade-up" data-delay="300">
+          <div class="blog-card-img" style="background:var(--color-leaf-light);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/blog_organic.jpg" alt="Identifying Organic Produce" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Aug 3, 2026</span></div>
+            <h3 class="blog-title"><a href="blog-details.html">The Complete Guide to Identifying Organic Produce</a></h3>
+            <a href="blog-details.html" class="blog-read-more">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 6: COMMENTS ══ -->
+  <section class="section bg-primary" aria-labelledby="comments-heading" id="comments">
+    <div class="container" style="max-width:760px;">
+      <div class="section-label" data-reveal="fade-up"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Conversation</div>
+      <h2 class="section-title" id="comments-heading" data-reveal="fade-up" data-delay="100">Comments <span class="highlight">(3)</span></h2>
+
+      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;" data-reveal="fade-up" data-delay="200">
+        <div class="comment-card">
+          <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:0.75rem;">
+            <div style="width:40px;height:40px;background:var(--color-forest-50);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--color-forest);" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div><div style="font-weight:600;color:var(--text-primary);font-size:var(--text-sm);">Priya S.</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Aug 10, 2026</div></div>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--text-secondary);">Amazing article! I had no idea bitter gourd was this good for blood sugar. Will definitely be ordering some this week from HarvestBox.</p>
+        </div>
+        <div class="comment-card">
+          <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:0.75rem;">
+            <div style="width:40px;height:40px;background:#FBEEDF;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#BC4B0B;" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div><div style="font-weight:600;color:var(--text-primary);font-size:var(--text-sm);">Rajan M.</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Aug 11, 2026</div></div>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--text-secondary);">Raw turmeric tip was new for me. Ordered a 500g pack and it arrived the same evening — incredibly fresh, thank you!</p>
+        </div>
+        <div class="comment-card">
+          <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:0.75rem;">
+            <div style="width:40px;height:40px;background:var(--color-leaf-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--color-leaf);" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div><div style="font-weight:600;color:var(--text-primary);font-size:var(--text-sm);">Aisha F.</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Aug 11, 2026</div></div>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--text-secondary);">The immunity shot recipe is a game changer! I've been having it every morning for a week and I can already feel the difference.</p>
+        </div>
+      </div>
+
+      <div class="comment-form-wrap" data-reveal="fade-up" data-delay="300">
+        <h3 style="font-family:var(--font-serif);font-size:var(--text-2xl);color:var(--text-primary);margin-bottom:1.5rem;">Leave a Comment</h3>
+        <form data-validate action="#" method="post" novalidate aria-label="Leave a comment">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group">
+              <label for="comment-name" class="form-label">Name <span class="required">*</span></label>
+              <input type="text" id="comment-name" class="form-control" placeholder="Your name" data-validate="required">
+              <div class="form-error" id="comment-name-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="comment-email" class="form-label">Email <span class="required">*</span></label>
+              <input type="email" id="comment-email" class="form-control" placeholder="your@email.com" data-validate="required|email">
+              <div class="form-error" id="comment-email-error"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="comment-text" class="form-label">Comment <span class="required">*</span></label>
+            <textarea id="comment-text" class="form-control" rows="4" placeholder="Share your thoughts…" data-validate="required|minLength:10" data-min-length-msg="Please write at least 10 characters."></textarea>
+            <div class="form-error" id="comment-text-error"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 7: SOCIAL SHARE BAR ══ -->
+  <section class="section" style="background:var(--bg-secondary);padding-block:2rem;" aria-label="Share this article">
+    <div class="container" style="max-width:760px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;" data-reveal="fade-up">
+        <div>
+          <div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);margin-bottom:0.25rem;">Found this helpful?</div>
+          <div style="font-size:var(--text-xs);color:var(--text-muted);">Share it with your friends &amp; family!</div>
+        </div>
+        <div style="display:flex;gap:0.5rem;" role="group" aria-label="Social share buttons">
+          <button class="share-btn" onclick="window.showToast('Copied!','Link copied to clipboard','success')" aria-label="Copy link to share"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          <button class="share-btn" onclick="window.open('https://wa.me/?text='+encodeURIComponent(document.title+' '+window.location.href))" aria-label="Share on WhatsApp"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></button>
+          <button class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title))" aria-label="Share on X"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+          <button class="share-btn" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href))" aria-label="Share on Facebook"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Column 1: Company / Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="HarvestBox Home">
+          <div class="logo-icon" aria-hidden="true">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">HarvestBox</span>
+            <span class="logo-sub">Farm Share Weekly</span>
+          </div>
+        </a>
+        <p>Weekly farm-share vegetable boxes from 50+ local partner farms — customizable, pausable, delivered to your doorstep.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.pinterest.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C24.002 5.367 18.624 0 12.017 0z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="home2.html" class="footer-link">Home 2</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="weekly-box.html" class="footer-link">This Week’s Box</a></li>
+          <li><a href="farms.html" class="footer-link">Our Farms</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact Details -->
+      <div class="footer-col">
+        <h4>Contact Details</h4>
+        <div class="footer-contact-item">
+          <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>123 Green Farm Road, Harvest Valley, CA 90210</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><a href="tel:+18003734765" style="color:inherit;">+1 (800) 373-4765</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><a href="mailto:hello@harvestbox.in" style="color:inherit;">hello@harvestbox.in</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>Box cutoff: Thu 10 PM<br>Deliveries: Sun – Tue</div>
+        </div>
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="footer-newsletter-desc">Get weekly fresh deals, seasonal harvest alerts, and organic recipe guides.</p>
+        <form class="newsletter-form footer-newsletter-form" action="#" method="post" novalidate aria-label="Newsletter subscription">
+          <label for="footer-email" class="sr-only">Email address</label>
+          <input type="email" id="footer-email" name="email" class="footer-newsletter-input" placeholder="Enter your email" required>
+          <button type="submit" class="footer-newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer Row -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 HarvestBox. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-legal-link">Terms &amp; Conditions</a>
+        <a href="sitemap.html" class="footer-legal-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/blog-details.js"></script>
+</body>
+</html>

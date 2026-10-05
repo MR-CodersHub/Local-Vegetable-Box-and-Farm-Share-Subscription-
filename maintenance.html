@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HarvestBox — We are currently performing scheduled maintenance to bring you even fresher produce and faster delivery.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0E3B2C">
+  <title>Under Maintenance — HarvestBox</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <script src="assets/js/icons.js"></script>
+  <style>
+    .maintenance-page { min-height:100svh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:3rem var(--container-pad); background:var(--bg-primary); position:relative; overflow:hidden; }
+    .countdown-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; max-width:500px; margin:2rem auto; }
+    .countdown-box { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius-xl); padding:1.25rem 1rem; box-shadow:var(--shadow-card); }
+    .countdown-number { font-family:var(--font-serif); font-size:var(--text-4xl); font-weight:700; color:var(--color-forest); line-height:1; margin-bottom:0.25rem; }
+    [data-theme="dark"] .countdown-number { color:var(--color-leaf); }
+    .countdown-label { font-size:var(--text-xs); color:var(--text-muted); text-transform:uppercase; letter-spacing:var(--ls-wider); font-weight:600; }
+    .progress-bar-wrap { background:var(--border-light); border-radius:var(--radius-full); height:12px; overflow:hidden; max-width:400px; margin:1.5rem auto; }
+    .progress-bar-fill { background:var(--grad-primary); height:100%; width:75%; border-radius:var(--radius-full); transition:width 1s ease-in-out; }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .countdown-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width: 480px) {
+      .maintenance-page { padding:2rem var(--container-pad); }
+      .countdown-grid { grid-template-columns:repeat(2,1fr); gap:0.75rem; }
+      .countdown-box { padding:1rem 0.75rem; }
+      .maintenance-page .container > div[style*="repeat(3,1fr)"] { grid-template-columns:repeat(1,1fr) !important; gap:0.75rem !important; }
+    }
+  </style>
+</head>
+<body>
+<div id="page-loader" aria-hidden="true"><div class="loader-logo"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> HarvestBox</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+
+
+<main class="maintenance-page">
+  <div class="blob-1" style="top:-80px;left:-80px;" aria-hidden="true"></div>
+  <div class="blob-2" style="bottom:-80px;right:-80px;" aria-hidden="true"></div>
+
+  <div class="container" style="max-width:680px;position:relative;z-index:1;">
+
+    <!-- Logo -->
+    <a href="index.html" class="navbar-logo" style="justify-content:center;margin-bottom:2rem;">
+      <div class="logo-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+      <div class="logo-text"><span class="logo-main">HarvestBox</span><span class="logo-sub">Farm Share Weekly</span></div>
+    </a>
+
+    <div class="section-label" style="justify-content:center;margin-bottom:1rem;" data-reveal="fade-up"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> System Upgrade In Progress</div>
+
+    <h1 class="section-title" data-reveal="fade-up" data-delay="100">Freshening Up Our <span class="highlight">Systems!</span></h1>
+    <p style="color:var(--text-secondary);font-size:var(--text-lg);line-height:var(--lh-relaxed);margin-bottom:1.5rem;" data-reveal="fade-up" data-delay="150">We are currently performing scheduled maintenance to upgrade our cold-chain tracking and produce inventory. We will be back online shortly!</p>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-grid" data-countdown="2026-08-11T18:00:00" data-reveal="fade-up" data-delay="200">
+      <div class="countdown-box"><div class="countdown-number" id="cd-days">00</div><div class="countdown-label">Days</div></div>
+      <div class="countdown-box"><div class="countdown-number" id="cd-hours">05</div><div class="countdown-label">Hours</div></div>
+      <div class="countdown-box"><div class="countdown-number" id="cd-mins">30</div><div class="countdown-label">Mins</div></div>
+      <div class="countdown-box"><div class="countdown-number" id="cd-secs">00</div><div class="countdown-label">Secs</div></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div style="margin-bottom:2rem;" data-reveal="fade-up" data-delay="250">
+      <div style="display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--text-muted);margin-bottom:0.5rem;max-width:400px;margin-inline:auto;">
+        <span>Upgrade Status</span>
+        <span style="font-weight:700;color:var(--color-forest);">75% Complete</span>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill"></div></div>
+    </div>
+
+    <!-- Features being worked on -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem;" data-reveal="fade-up" data-delay="300">
+      <div class="feature-card" style="padding:1rem;text-align:center;">
+        <div style="margin-bottom:0.5rem;color:var(--color-forest);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div style="font-weight:600;font-size:var(--text-xs);color:var(--text-primary);">Faster Checkout</div>
+      </div>
+      <div class="feature-card" style="padding:1rem;text-align:center;">
+        <div style="margin-bottom:0.5rem;color:var(--color-leaf);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div style="font-weight:600;font-size:var(--text-xs);color:var(--text-primary);">Live GPS Tracking</div>
+      </div>
+      <div class="feature-card" style="padding:1rem;text-align:center;">
+        <div style="margin-bottom:0.5rem;color:#BC4B0B;"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 13v8"/><path d="M9 21h6"/><path d="M7 11.5a4.5 4.5 0 0 1 3-4.24 5 5 0 0 1 9.5 1.74 4.5 4.5 0 0 1-2.5 8h-7a4.5 4.5 0 0 1-3-5.5z"/></svg></div>
+        <div style="font-weight:600;font-size:var(--text-xs);color:var(--text-primary);">100+ New Products</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/utils.js"></script>
+</body>
+</html>

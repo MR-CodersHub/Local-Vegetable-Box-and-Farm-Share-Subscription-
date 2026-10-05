@@ -1,0 +1,575 @@
+/* ================================================================
+   FRESHMARKET — DARK MODE CSS
+   Dark mode overrides for all components and sections
+   ================================================================ */
+
+:root[data-theme="dark"] {
+  --bg-primary:    #0A190F;
+  --bg-secondary:  #112618;
+  --bg-tertiary:   #163620;
+  --bg-card:       #15321E;
+  --color-leaf:    #8FC53F;
+  --icon-gold:     #FFC53D;
+  --text-primary:  #F9FAFB;
+  --text-secondary:#E5E7EB;
+  --text-muted:    #9CA3AF;
+  --text-inverse:  #0A190F;
+  --border-color:  #285934;
+  --border-light:  #1F4628;
+  --color-forest:  #57B25E;
+  --color-forest-50: #112F1B;
+}
+
+/* ================================================================
+   CARDS IN DARK MODE
+   ================================================================ */
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .faq-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .product-card:hover,
+[data-theme="dark"] .feature-card:hover,
+[data-theme="dark"] .blog-card:hover {
+  border-color: rgba(47,93,35,0.4);
+}
+
+[data-theme="dark"] .product-card-wishlist {
+  background: rgba(26,46,33,0.9);
+  color: var(--neutral-300);
+}
+
+[data-theme="dark"] .product-card-wishlist:hover,
+[data-theme="dark"] .product-card-wishlist.active {
+  color: #F87171;
+}
+
+[data-theme="dark"] .product-footer {
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .btn-cart {
+  background: rgba(14,59,44,0.2);
+  border-color: rgba(14,59,44,0.4);
+  color: var(--color-leaf);
+}
+
+[data-theme="dark"] .btn-cart:hover {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  color: white;
+}
+
+[data-theme="dark"] .feature-icon-green { background: rgba(14,59,44,0.3); color: #8FD8A8; }
+[data-theme="dark"] .feature-icon-leaf  { background: rgba(47,93,35,0.2); color: #A6C944; }
+[data-theme="dark"] .feature-icon-gold  { background: rgba(188,75,11,0.2); color: #FFC53D; }
+[data-theme="dark"] .feature-icon-terra { background: rgba(194,65,12,0.2); color: #FB923C; }
+
+/* ================================================================
+   NAVBAR DARK MODE
+   ================================================================ */
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(13,31,20,0.92);
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .nav-link { color: rgba(240,235,224,0.85); }
+[data-theme="dark"] .navbar.transparent .nav-link { color: rgba(255,255,255,0.9); }
+
+[data-theme="dark"] .nav-icon-btn { color: rgba(240,235,224,0.85); }
+
+[data-theme="dark"] .btn-outline {
+  color: #A6C944;
+  border-color: rgba(163,230,53,0.6);
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background: #A6C944;
+  border-color: #A6C944;
+  color: #0A231B;
+}
+
+[data-theme="dark"] .btn-primary {
+  color: #0A190F !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .pricing-card.featured {
+  border-color: var(--color-leaf);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+}
+
+[data-theme="dark"] .nav-dropdown {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .dropdown-link { color: rgba(240,235,224,0.85); }
+[data-theme="dark"] .dropdown-link:hover { background: var(--bg-tertiary); color: var(--color-leaf); }
+
+[data-theme="dark"] .mobile-nav { background: var(--bg-card); border-left-color: var(--border-color); }
+[data-theme="dark"] .mobile-nav-header { border-bottom-color: var(--border-color); }
+[data-theme="dark"] .mobile-close { background: var(--bg-secondary); }
+[data-theme="dark"] .mobile-nav-link { color: rgba(240,235,224,0.85); }
+[data-theme="dark"] .mobile-nav-link:hover,
+[data-theme="dark"] .mobile-nav-link.active { background: rgba(14,59,44,0.2); color: var(--color-leaf); }
+[data-theme="dark"] .mobile-sub-link { color: var(--text-secondary); }
+[data-theme="dark"] .mobile-sub-link:hover { background: rgba(14,59,44,0.15); }
+[data-theme="dark"] .mobile-nav-footer { border-top-color: var(--border-color); }
+
+/* ================================================================
+   HERO SLIDER DARK MODE
+   ================================================================ */
+[data-theme="dark"] .hero-slider { background: #0A231B; }
+[data-theme="dark"] .slide-overlay {
+  background: linear-gradient(135deg, rgba(4,18,14,0.9) 0%, rgba(14,59,44,0.7) 100%);
+}
+
+/* ================================================================
+   SECTIONS DARK MODE
+   ================================================================ */
+[data-theme="dark"] .marquee-section {
+  background: #082A20;
+}
+
+[data-theme="dark"] .category-card::before {
+  background: linear-gradient(135deg, #0A231B 0%, rgba(14,59,44,0.95) 100%);
+}
+
+/* Freshness strip dark */
+[data-theme="dark"] .freshness-strip {
+  background: #082A20;
+}
+
+[data-theme="dark"] .freshness-item { color: rgba(255,255,255,0.85); }
+
+/* ================================================================
+   CATEGORY CARDS DARK MODE (home: "Fresh From The Farm")
+   ================================================================ */
+[data-theme="dark"] .category-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .category-card .cat-name { color: var(--text-primary) !important; }
+[data-theme="dark"] .category-card p { color: var(--text-secondary) !important; }
+
+[data-theme="dark"] .cat-card-veg .cat-icon,
+[data-theme="dark"] .cat-card-veg svg { color: #57B25E !important; }
+
+[data-theme="dark"] .cat-card-fruits .cat-icon,
+[data-theme="dark"] .cat-card-fruits svg { color: #FB923C !important; }
+
+[data-theme="dark"] .cat-card-herbs .cat-icon,
+[data-theme="dark"] .cat-card-herbs svg { color: #A6C944 !important; }
+
+[data-theme="dark"] .cat-card-seasonal .cat-icon,
+[data-theme="dark"] .cat-card-seasonal svg { color: #FACC15 !important; }
+
+[data-theme="dark"] .cat-card-bulk .cat-icon,
+[data-theme="dark"] .cat-card-bulk svg { color: #2DD4BF !important; }
+
+[data-theme="dark"] .category-card:hover {
+  background: var(--color-forest) !important;
+  border-color: var(--color-gold) !important;
+}
+
+[data-theme="dark"] .category-card:hover .cat-name { color: #FFFFFF !important; }
+[data-theme="dark"] .category-card:hover p { color: rgba(255, 255, 255, 0.85) !important; }
+[data-theme="dark"] .category-card:hover .cat-icon,
+[data-theme="dark"] .category-card:hover svg { color: var(--color-gold) !important; }
+
+/* ================================================================
+   FEATURE CARDS DARK MODE (home: "Freshness You Can Taste")
+   Shadow kept at light-mode level so it doesn't look too heavy
+   ================================================================ */
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .feature-card:hover {
+  box-shadow: 0 2px 16px rgba(35,23,16,0.1), 0 1px 4px rgba(35,23,16,0.06);
+}
+
+/* ================================================================
+   FORMS DARK MODE
+   ================================================================ */
+[data-theme="dark"] .form-control {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control:focus {
+  background: var(--bg-card);
+  border-color: var(--color-leaf);
+}
+
+[data-theme="dark"] select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23E5E7EB'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px;
+}
+
+[data-theme="dark"] .newsletter-form {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* ================================================================
+   CTA / NEWSLETTER SECTION DARK MODE (home: "Get Fresh Daily Deals")
+   Section stays identical to light mode in dark mode
+   ================================================================ */
+[data-theme="dark"] .cta-section .newsletter-form {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* ================================================================
+   FAQ DARK MODE
+   ================================================================ */
+[data-theme="dark"] .faq-icon {
+  background: rgba(14,59,44,0.2);
+  color: var(--color-leaf);
+}
+
+[data-theme="dark"] .faq-item.open .faq-icon {
+  background: var(--color-leaf);
+  color: white;
+}
+
+[data-theme="dark"] .faq-item.open .faq-question {
+  color: #A6C944 !important;
+}
+
+/* ================================================================
+   TABS DARK MODE
+   ================================================================ */
+[data-theme="dark"] .tabs { background: var(--bg-secondary); }
+[data-theme="dark"] .tab-btn.active { background: var(--bg-card); color: var(--color-leaf); }
+
+/* ================================================================
+   TAGS DARK MODE
+   ================================================================ */
+[data-theme="dark"] .tag {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .tag:hover,
+[data-theme="dark"] .tag.active {
+  background: var(--color-forest);
+  color: #000000;
+  border-color: var(--color-forest);
+}
+
+/* ================================================================
+   BADGES DARK MODE
+   ================================================================ */
+[data-theme="dark"] .badge-green  { background: #082A20; color: #8FD8A8; }
+[data-theme="dark"] .badge-leaf   { background: #162D1E; color: #A6C944; }
+[data-theme="dark"] .badge-gold   { background: #3D2E0A; color: #FFC53D; }
+[data-theme="dark"] .badge-terra  { background: #3A1D0A; color: #FB923C; }
+[data-theme="dark"] .badge-cream  { background: #2E2A20; color: #FAF5E9; }
+[data-theme="dark"] .badge-solid  { background: #1E4D2A; color: white; }
+[data-theme="dark"] .badge-outline { border-color: rgba(163,230,53,0.6); color: #A6C944; }
+
+/* ================================================================
+   COVERAGE ZONES (DELIVERY) DARK MODE
+   ================================================================ */
+[data-theme="dark"] .coverage-zone {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .coverage-zone h3 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .coverage-zone div[style*="color:var(--color-forest)"],
+[data-theme="dark"] .coverage-zone div[style*="color:white"],
+[data-theme="dark"] .coverage-zone svg {
+  color: #57B25E !important;
+}
+
+/* ================================================================
+   FLOATING BADGES (HERO) DARK MODE
+   ================================================================ */
+[data-theme="dark"] .floating-badge {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .floating-badge span[style*="color:var(--color-forest)"] {
+  color: #57B25E !important;
+}
+
+/* ================================================================
+   BLOG DARK MODE
+   ================================================================ */
+[data-theme="dark"] .blog-card-img { background: var(--bg-tertiary); }
+
+/* ================================================================
+   TOAST DARK MODE
+   ================================================================ */
+[data-theme="dark"] .toast {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .toast-title { color: var(--text-primary); }
+[data-theme="dark"] .toast-msg   { color: var(--text-secondary); }
+
+/* ================================================================
+   LIGHTBOX DARK MODE
+   ================================================================ */
+[data-theme="dark"] .lightbox { background: rgba(0,0,0,0.95); }
+
+/* ================================================================
+   FOOTER DARK MODE
+   ================================================================ */
+[data-theme="dark"] .footer { background: #0D1007; }
+
+/* ================================================================
+   BREADCRUMB DARK MODE
+   ================================================================ */
+[data-theme="dark"] .breadcrumb { color: rgba(255,255,255,0.65); }
+[data-theme="dark"] .breadcrumb a { color: rgba(255,255,255,0.65); }
+
+/* ================================================================
+   BACK TO TOP DARK MODE
+   ================================================================ */
+[data-theme="dark"] .back-to-top {
+  background: var(--color-forest-600);
+  box-shadow: 0 8px 25px rgba(14,59,44,0.4);
+}
+
+/* ================================================================
+   SECTION BACKGROUNDS DARK MODE
+   ================================================================ */
+[data-theme="dark"] .bg-secondary { background: var(--bg-secondary); }
+[data-theme="dark"] .bg-tertiary  { background: var(--bg-tertiary); }
+
+/* Section with light bg */
+[data-theme="dark"] .section-light {
+  background: var(--bg-secondary);
+}
+
+/* ================================================================
+   TESTIMONIAL SECTION DARK MODE
+   ================================================================ */
+[data-theme="dark"] .testimonial-card { border-color: var(--border-color); }
+[data-theme="dark"] .testimonial-avatar { border-color: rgba(14,59,44,0.4); }
+
+/* ================================================================
+   PRODUCT CATEGORY SECTION DARK MODE
+   ================================================================ */
+[data-theme="dark"] .product-card-img { background: var(--bg-secondary); }
+
+/* ================================================================
+   STAT SECTION DARK MODE
+   ================================================================ */
+[data-theme="dark"] .stat-card-bg {
+  background: var(--bg-secondary);
+}
+
+/* ================================================================
+   INPUT AUTOFILL DARK MODE
+   ================================================================ */
+[data-theme="dark"] input:-webkit-autofill,
+[data-theme="dark"] input:-webkit-autofill:hover,
+[data-theme="dark"] input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px var(--bg-secondary) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  caret-color: var(--text-primary);
+}
+
+/* ================================================================
+   SKELETON DARK MODE
+   ================================================================ */
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+}
+
+/* ================================================================
+   PROGRESS BAR DARK MODE
+   ================================================================ */
+[data-theme="dark"] .progress-bar { background: var(--border-color); }
+
+/* ================================================================
+   404 PAGE DARK MODE
+   ================================================================ */
+[data-theme="dark"] .error-page { background: var(--bg-primary); }
+
+/* ================================================================
+   MAINTENANCE PAGE DARK MODE
+   ================================================================ */
+[data-theme="dark"] .maintenance-page { background: var(--bg-primary); }
+
+/* ================================================================
+   SELECTION STYLE
+   ================================================================ */
+::selection {
+  background: rgba(47,93,35,0.3);
+  color: var(--color-forest);
+}
+
+[data-theme="dark"] ::selection {
+  background: rgba(47,93,35,0.4);
+  color: var(--color-leaf);
+}
+
+/* ================================================================
+   FOCUS STYLES (ACCESSIBILITY)
+   ================================================================ */
+:focus-visible {
+  outline: 2px solid var(--color-leaf);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: var(--color-leaf-mid);
+}
+
+/* ================================================================
+   SCROLLBAR STYLING
+   ================================================================ */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--neutral-400); }
+
+[data-theme="dark"] ::-webkit-scrollbar-track { background: #0A231B; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--border-color); }
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: var(--neutral-500); }
+
+/* ================================================================
+   DARK MODE CONTRAST OVERRIDES
+   ================================================================ */
+[data-theme="dark"] ::placeholder { color: #9CA3AF !important; opacity: 1; }
+[data-theme="dark"] .form-control { color: #FFFFFF !important; background: #112618; border-color: #285934; }
+[data-theme="dark"] .form-label { color: #F9FAFB; }
+[data-theme="dark"] .section-title { color: #FFFFFF; }
+[data-theme="dark"] .section-subtitle { color: #E5E7EB; }
+[data-theme="dark"] .product-name,
+[data-theme="dark"] .blog-title,
+[data-theme="dark"] .feature-title,
+[data-theme="dark"] .faq-question { color: #F9FAFB; }
+[data-theme="dark"] .product-origin,
+[data-theme="dark"] .blog-excerpt,
+[data-theme="dark"] .feature-text,
+[data-theme="dark"] .faq-answer-inner { color: #D1D5DB; }
+[data-theme="dark"] .price-current { color: #8FD8A8; }
+[data-theme="dark"] .price-old { color: #9CA3AF; }
+[data-theme="dark"] .price-unit { color: #D1D5DB; }
+
+/* Ratings / stars: keep the bright gold on dark cards */
+[data-theme="dark"] .stars { color: var(--color-gold); }
+
+/* Form validation & required markers */
+[data-theme="dark"] .required { color: #FB923C; }
+[data-theme="dark"] .form-error { color: #FCA5A5; }
+[data-theme="dark"] .form-control.error { border-color: #F87171; }
+
+/* DARK MODE TRANSITION (smooth toggle) */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Exclude elements that shouldn't have blanket transitions */
+.hero-slider *,
+.slide *,
+[data-reveal],
+.marquee-track,
+.anim-float,
+.anim-float-gentle {
+  transition-property: opacity, transform, background-color, border-color, color;
+}
+
+/* ================================================================
+   CART DRAWER DARK MODE
+   ================================================================ */
+[data-theme="dark"] .cart-drawer {
+  background: #0B160E !important;
+  border-left: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .cart-drawer-header,
+[data-theme="dark"] .cart-drawer-footer {
+  background: #0B160E !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .cart-item {
+  background: #102416 !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .cart-item-price,
+[data-theme="dark"] .subtotal-amount {
+  color: #57B25E !important;
+}
+
+[data-theme="dark"] .cart-qty-btn {
+  background: #0B160E !important;
+  border-color: var(--border-color) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .cart-qty-btn:hover {
+  background: var(--color-forest) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .cart-delivery-note {
+  background: rgba(14, 59, 44, 0.4) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .cart-empty-state .empty-icon {
+  background: rgba(14, 59, 44, 0.4);
+  color: #57B25E;
+}
+
+/* ================================================================
+   BLOG SEARCH DARK MODE
+   ================================================================ */
+[data-theme="dark"] .blog-search {
+  background: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .blog-search input {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .blog-search input::placeholder {
+  color: #78716C !important;
+}
+
+[data-theme="dark"] .blog-search button {
+  background: var(--color-forest) !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .blog-search button:hover {
+  background: #3E8E41 !important;
+}
+
+/* ================================================================
+   CONTACT PAGE PINCODE CHECKER DARK MODE
+   ================================================================ */
+[data-theme="dark"] .pincode-checker button {
+  color: #000000 !important;
+}
