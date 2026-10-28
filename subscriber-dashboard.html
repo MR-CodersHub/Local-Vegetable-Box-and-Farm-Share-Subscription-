@@ -63,7 +63,21 @@
     .switch input:checked + .track::after{left:23px;}
     @media(max-width:1200px){.kpis{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:900px){.two{grid-template-columns:1fr;}}
-    @media(max-width:640px){.kpis{grid-template-columns:1fr;}.panel{padding:1.25rem;}.cal{grid-template-columns:repeat(7,minmax(36px,1fr));overflow-x:auto;}.next-delivery{padding:1.25rem;}}
+    @media(max-width:640px){
+      .kpis{grid-template-columns:repeat(2,1fr);gap:0.65rem;}
+      .kpi{padding:0.85rem 0.75rem;}
+      .kpi .v{font-size:1.35rem;}
+      .panel{padding:1.15rem 0.95rem;}
+      .cal{gap:0.3rem;}
+      .cal-day{padding:0.4rem 0.2rem;font-size:0.65rem;min-height:44px;}
+      .cal-day b{font-size:0.75rem;}
+      .next-delivery{padding:1.25rem 1rem;}
+    }
+    @media(max-width:360px){
+      .kpis{gap:0.45rem;}
+      .kpi{padding:0.65rem 0.5rem;}
+      .kpi .v{font-size:1.15rem;}
+    }
   </style>
 </head>
 <body class="dash-app-body">
@@ -87,6 +101,9 @@
           <span class="dash-brand-sub">Farm Share Weekly</span>
         </div>
       </a>
+      <button class="dash-sidebar-close" id="dash-sidebar-close" aria-label="Close sidebar">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
 
     <!-- User Profile Card -->
@@ -274,12 +291,57 @@
   }
 
   // Tabs
+  const viewTitles = {
+    overview: 'Dashboard Overview',
+    box: 'My Box Builder',
+    deliveries: 'Deliveries & Calendar',
+    orders: 'Order History',
+    plan: 'Plan & Billing',
+    prefs: 'Preferences',
+    profile: 'Profile Settings'
+  };
+
   document.querySelectorAll('.side-link').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('.side-link').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+    document.querySelectorAll('.side-link').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));
-    document.getElementById('view-'+b.dataset.view).classList.add('on'); window.scrollTo({top:0,behavior:'smooth'});
+    const target = document.getElementById('view-'+b.dataset.view);
+    if(target) target.classList.add('on');
+    const titleEl = document.getElementById('topbar-title');
+    if(titleEl && viewTitles[b.dataset.view]) {
+      titleEl.textContent = viewTitles[b.dataset.view];
+    }
+    // Close mobile drawer if open
+    document.getElementById('dash-sidebar')?.classList.remove('open');
+    document.getElementById('sidebar-backdrop')?.classList.remove('show');
+    window.scrollTo({top:0,behavior:'smooth'});
   }));
-  document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('.side-link[data-view="'+b.dataset.goto+'"]').click();}));
+  document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>{
+    const link = document.querySelector('.side-link[data-view="'+b.dataset.goto+'"]');
+    if(link) link.click();
+  }));
+
+  // Mobile sidebar hamburger & close button & backdrop
+  const hamburger = document.getElementById('dash-hamburger');
+  const sidebar = document.getElementById('dash-sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  const closeBtn = document.getElementById('dash-sidebar-close');
+  if(hamburger && sidebar && backdrop) {
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      backdrop.classList.toggle('show');
+    });
+    backdrop.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('show');
+    });
+    if(closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('show');
+      });
+    }
+  }
 
   // Box builder (shared with weekly-box.html via hb_box_v1)
   const PRODUCE=[{id:'spinach',name:'Nilgiri Baby Spinach',meta:'250g · Kurinji Valley',price:45,img:'assets/images/product_baby_spinach.png'},{id:'tomato',name:'Hosur Cherry Tomatoes',meta:'500g · Hosur Belt',price:60,img:'assets/images/product_cherry_tomatoes.png'},{id:'carrot',name:'Ooty Hill Carrots',meta:'1kg · Nilgiri Hills',price:55,img:'assets/images/product_purple_carrots.png'},{id:'basil',name:'Kodaikanal Basil',meta:'100g · Yercaud Hills',price:35,img:'assets/images/product_fresh_basil.png'},{id:'avocado',name:'Palani Butter Fruit',meta:'2 pc · Yercaud Grove',price:90,img:'assets/images/product_avocado.png'},{id:'mango',name:'Salem Malgova Mango',meta:'4 pc · Salem Orchards',price:120,img:'assets/images/product_malgova_mango.png'},{id:'orange',name:'Yercaud Hill Oranges',meta:'1kg · Yercaud Grove',price:80,img:'assets/images/product_yercaud_oranges.png'},{id:'blueberry',name:'Nilgiri Forest Berries',meta:'250g · Nilgiri Gardens',price:180,img:'assets/images/product_forest_berries.png'},{id:'pineapple',name:'Kolli Hills Pineapple',meta:'1 pc · Kolli Hills',price:70,img:'assets/images/product_sweet_pineapple.png'}];

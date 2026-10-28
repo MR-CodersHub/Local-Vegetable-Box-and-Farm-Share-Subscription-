@@ -3568,6 +3568,39 @@ body.dash-app-body {
   margin-bottom: 1.25rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.dash-sidebar-close {
+  display: none;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  transition: all var(--dur-fast, 0.15s) ease;
+  padding: 0;
+}
+.dash-sidebar-close:hover {
+  background: var(--color-forest-50);
+  border-color: var(--color-forest);
+  color: var(--color-forest);
+}
+[data-theme="dark"] .dash-sidebar-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.dash-sidebar-close .icon-svg {
+  width: 18px;
+  height: 18px;
 }
 .dash-brand-link {
   display: flex;
@@ -3877,6 +3910,11 @@ body.dash-app-body {
 
 @media (max-width: 1024px) {
   .dash-sidebar {
+    width: 280px;
+    max-width: 85vw;
+    height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transform: translateX(-100%);
   }
   [dir="rtl"] .dash-sidebar {
@@ -3884,6 +3922,9 @@ body.dash-app-body {
   }
   .dash-sidebar.open {
     transform: translateX(0);
+  }
+  .dash-sidebar-close {
+    display: inline-flex;
   }
   .dash-sidebar-backdrop.show {
     display: block;
@@ -3900,6 +3941,146 @@ body.dash-app-body {
   }
   .dash-content {
     padding: 1.5rem 1.25rem 3rem;
+  }
+}
+
+/* Dashboard Mobile (max-width: 640px) */
+@media (max-width: 640px) {
+  .dash-topbar {
+    height: 60px;
+    padding: 0 0.85rem;
+  }
+  .dash-topbar-left {
+    gap: 0.6rem;
+    min-width: 0;
+    flex: 1;
+  }
+  .dash-mobile-toggle {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .dash-mobile-toggle .icon-svg {
+    width: 18px;
+    height: 18px;
+  }
+  .dash-topbar-title {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+  }
+  .dash-topbar-right {
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .dash-icon-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+  .dash-icon-btn .icon-svg {
+    width: 17px;
+    height: 17px;
+  }
+  .dash-user-chip {
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+  .dash-user-chip span {
+    display: none !important;
+  }
+  .dash-user-chip .avatar-sm {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+  .dash-content {
+    padding: 1rem 0.85rem 2.5rem;
+  }
+  .dash-welcome-bar h2 {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+  }
+  .next-delivery, .banner {
+    padding: 1.25rem 1rem !important;
+    border-radius: var(--radius-xl) !important;
+    gap: 1rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .next-delivery h2, .banner h2 {
+    font-size: 1.3rem !important;
+    line-height: 1.25 !important;
+  }
+  .next-delivery .btn, .banner .btn {
+    flex: 1 1 auto;
+    min-width: 110px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
+    text-align: center;
+    justify-content: center;
+  }
+  .panel {
+    padding: 1.15rem 0.95rem !important;
+    border-radius: var(--radius-xl) !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .panel h3 {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .kpis {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .kpi {
+    padding: 0.85rem 0.75rem !important;
+    border-radius: var(--radius-lg) !important;
+  }
+  .kpi .v {
+    font-size: 1.35rem !important;
+    line-height: 1.15 !important;
+  }
+  .kpi .l {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.04em !important;
+  }
+  .cal {
+    gap: 0.3rem !important;
+  }
+  .cal-day {
+    padding: 0.4rem 0.2rem !important;
+    font-size: 0.65rem !important;
+    border-radius: var(--radius-md) !important;
+    min-height: 44px !important;
+  }
+  .cal-day b {
+    font-size: 0.75rem !important;
+  }
+  .bars {
+    gap: 0.35rem !important;
+    height: 140px !important;
+  }
+  .bar-label {
+    font-size: 0.68rem !important;
+  }
+  .attention-box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 0.85rem 1rem !important;
+  }
+  .attention-box .btn,
+  .attention-box .mini-btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    margin-left: 0 !important;
   }
 }
 
@@ -3997,9 +4178,57 @@ body.dash-app-body {
     font-size: 1.1rem !important;
   }
   .dash-topbar {
-    padding: 0 0.75rem !important;
+    padding: 0 0.5rem !important;
+    height: 56px !important;
+  }
+  .dash-topbar-left {
+    gap: 0.45rem !important;
+  }
+  .dash-mobile-toggle {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .dash-mobile-toggle .icon-svg {
+    width: 16px !important;
+    height: 16px !important;
   }
   .dash-topbar-title {
-    font-size: 1.05rem !important;
+    font-size: 0.95rem !important;
+    max-width: 125px !important;
   }
+  .dash-topbar-right {
+    gap: 0.35rem !important;
+  }
+  .dash-icon-btn {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+  }
+  .dash-user-chip .avatar-sm {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.8rem !important;
+  }
+  .dash-content {
+    padding: 0.85rem 0.5rem 2rem !important;
+  }
+  .kpis {
+    gap: 0.45rem !important;
+  }
+  .kpi {
+    padding: 0.65rem 0.5rem !important;
+  }
+  .kpi .v {
+    font-size: 1.15rem !important;
+  }
+}
+
+/* Responsive Table Defaults for Dashboards */
+table.dtable {
+  width: 100%;
+  min-width: 560px;
+}
+table.dtable th,
+table.dtable td {
+  white-space: nowrap;
 }
