@@ -21,23 +21,19 @@
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <script src="assets/js/icons.js"></script>
   <style>
-    body{background:var(--bg-secondary);}
-    .dash{padding-top:calc(var(--navbar-h) + 1.5rem);padding-bottom:4rem;}
-    .dash-layout{display:grid;grid-template-columns:260px 1fr;gap:1.75rem;align-items:start;}
-    .side{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-2xl);box-shadow:var(--shadow-card);padding:1.25rem;position:sticky;top:calc(var(--navbar-h) + 1rem);}
-    .side-user{display:flex;gap:0.75rem;align-items:center;padding:0.5rem 0.5rem 1rem;border-bottom:1px solid var(--border-light);margin-bottom:1rem;}
-    .avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#0E3B2C,#3F7A25);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;flex-shrink:0;}
-    .side-links{display:flex;flex-direction:column;gap:0.25rem;}
-    .side-link{display:flex;align-items:center;gap:0.65rem;padding:0.65rem 0.8rem;border-radius:var(--radius-lg);color:var(--text-secondary);font-size:var(--text-sm);font-weight:600;text-decoration:none;cursor:pointer;border:none;background:transparent;width:100%;text-align:left;}
-    .side-link:hover{background:var(--color-forest-50);color:var(--color-forest);}
-    .side-link.on{background:var(--color-forest);color:#fff;}
-    .panel{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-2xl);box-shadow:var(--shadow-card);padding:1.75rem;}
-    .panel h3{font-family:var(--font-serif);margin:0 0 1rem;font-size:var(--text-xl);}
-    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.75rem;}
+    body{background:var(--bg-secondary);margin:0;padding:0;}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:2rem;}
     .kpi{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.25rem;box-shadow:var(--shadow-card);}
     .kpi .v{font-family:var(--font-serif);font-size:var(--text-3xl);font-weight:700;color:var(--color-forest);}
     .kpi .l{font-size:var(--text-xs);color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;}
-    .next-delivery{background:linear-gradient(135deg,#0A2A1E,#0E3B2C 60%,#3F7A25 145%);color:#fff;border-radius:var(--radius-2xl);padding:1.75rem 2rem;display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:1.75rem;}
+    .next-delivery{background:linear-gradient(135deg,#0A2A1E,#0E3B2C 60%,#3F7A25 145%);color:#fff;border-radius:var(--radius-2xl);padding:1.75rem 2rem;display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:2rem;}
+    .next-delivery h2, .next-delivery #next-delivery-title{color:#ffffff !important;}
+    .next-delivery p, .next-delivery #cutoff-line{color:rgba(255,255,255,0.92) !important;}
+    .next-delivery div, .next-delivery span{color:#ffffff;}
+    .next-delivery #sub-status-line{color:rgba(255,255,255,0.95) !important;}
+    .next-delivery #dash-timer{color:#ffffff !important;}
+    .panel{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-2xl);box-shadow:var(--shadow-card);padding:1.75rem;}
+    .panel h3{font-family:var(--font-serif);margin:0 0 1rem;font-size:var(--text-xl);}
     .builder-item{display:flex;gap:0.8rem;align-items:center;border:1px solid var(--border-light);background:var(--bg-tertiary);border-radius:var(--radius-lg);padding:0.65rem 0.8rem;}
     .builder-item > div{min-width:0;}
     .builder-item img{width:46px;height:46px;border-radius:10px;object-fit:cover;background:#fff;border:1px solid var(--border-light);}
@@ -65,53 +61,103 @@
     .switch input:checked + .track{background:var(--color-forest);border-color:var(--color-forest);}
     .track::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:0.2s;}
     .switch input:checked + .track::after{left:23px;}
-    @media(max-width:1024px){.dash-layout{grid-template-columns:1fr;}.side{position:static;}.side-links{flex-direction:row;flex-wrap:wrap;}.kpis{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:480px){.kpis{grid-template-columns:1fr;}.panel{padding:1.25rem;}.next-delivery{padding:1.25rem;}}
-    @media(max-width:640px){.two{grid-template-columns:1fr;}.kpis{grid-template-columns:1fr 1fr;}.panel{padding:1.25rem;}.cal{grid-template-columns:repeat(7,minmax(36px,1fr));overflow-x:auto;}}
+    @media(max-width:1200px){.kpis{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:900px){.two{grid-template-columns:1fr;}}
+    @media(max-width:640px){.kpis{grid-template-columns:1fr;}.panel{padding:1.25rem;}.cal{grid-template-columns:repeat(7,minmax(36px,1fr));overflow-x:auto;}.next-delivery{padding:1.25rem;}}
   </style>
 </head>
-<body>
+<body class="dash-app-body">
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <div id="page-loader" aria-hidden="true"><div class="loader-logo"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> HarvestBox</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 <div id="page-transition" aria-hidden="true"></div>
 <div class="toast-container" aria-live="polite"></div>
-<header>
-  <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container navbar-inner">
-      <a href="index.html" class="navbar-logo" aria-label="HarvestBox Home"><div class="logo-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><div class="logo-text"><span class="logo-main">HarvestBox</span><span class="logo-sub">Farm Share Weekly</span></div></a>
-      <ul class="nav-menu" role="list"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="weekly-box.html" class="nav-link">This Week’s Box</a></li><li class="nav-item"><a href="farms.html" class="nav-link">Our Farms</a></li><li class="nav-item"><a href="pricing.html" class="nav-link">Plans</a></li><li class="nav-item"><a href="services.html" class="nav-link">Services</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li><li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul>
-      <div class="nav-controls"><button class="nav-icon-btn theme-toggle" id="theme-btn" aria-label="Toggle dark mode"><span class="theme-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button><button class="nav-icon-btn rtl-toggle rtl-btn" id="rtl-btn" aria-label="Toggle RTL/LTR">RTL</button><button class="nav-login" id="logout-btn">Logout</button><a href="weekly-box.html" class="nav-cta">Get Farm Box</a><button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div>
+<!-- Mobile Sidebar Backdrop -->
+<div class="dash-sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+<div class="dash-app-wrapper">
+  <!-- Full-Height Left Sidebar -->
+  <aside class="dash-sidebar" id="dash-sidebar" aria-label="Dashboard navigation">
+    <div class="dash-sidebar-brand">
+      <a href="index.html" class="dash-brand-link" aria-label="HarvestBox Home">
+        <div class="dash-brand-icon" aria-hidden="true">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <div class="dash-brand-text">
+          <span class="dash-brand-main">HarvestBox</span>
+          <span class="dash-brand-sub">Farm Share Weekly</span>
+        </div>
+      </a>
     </div>
-  </nav>
-  <div class="mobile-nav-overlay" id="nav-overlay" aria-hidden="true"></div>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-    <div class="mobile-nav-header"><a href="index.html" class="navbar-logo"><div class="logo-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><div class="logo-text"><span class="logo-main">HarvestBox</span><span class="logo-sub">Farm Share Weekly</span></div></a><button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button></div>
-    <div class="mobile-nav-links"><a href="index.html" class="mobile-nav-link">Home</a><a href="weekly-box.html" class="mobile-nav-link">This Week’s Box</a><a href="subscriber-dashboard.html" class="mobile-nav-link active" aria-current="page">My Dashboard</a><a href="admin-dashboard.html" class="mobile-nav-link">Admin Demo</a></div>
-    <div class="mobile-nav-footer"><a href="weekly-box.html" class="mobile-cta">Customize This Week’s Box</a></div>
-  </nav>
-</header>
-<main id="main-content">
-<div class="container dash">
-  <div class="dash-layout">
-    <aside class="side" aria-label="Dashboard navigation">
-      <div class="side-user"><div class="avatar" id="user-initial">H</div><div><div style="font-weight:800;" id="user-name">Subscriber</div><div style="font-size:var(--text-xs);color:var(--text-muted);" id="user-plan">Family Box · Weekly</div></div></div>
-      <div class="side-links" role="tablist">
-        <button class="side-link on" data-view="overview"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg> Overview</button>
-        <button class="side-link" data-view="box"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> My Box Builder</button>
-        <button class="side-link" data-view="deliveries"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Deliveries &amp; Calendar</button>
-        <button class="side-link" data-view="orders"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/></svg> Order History</button>
-        <button class="side-link" data-view="plan"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Plan &amp; Billing</button>
-        <button class="side-link" data-view="prefs"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Preferences</button>
-        <button class="side-link" data-view="profile"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Profile</button>
+
+    <!-- User Profile Card -->
+    <div class="dash-user-card">
+      <div class="avatar" id="user-initial">D</div>
+      <div class="dash-user-meta">
+        <div class="dash-user-name" id="user-name">Subscriber</div>
+        <div class="dash-user-sub" id="user-plan">Family Box · Weekly</div>
       </div>
-      <div style="margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;">
-        <a href="weekly-box.html" class="btn btn-gold btn-sm" style="justify-content:center;">Customize This Week’s Box</a>
-        <a href="index.html" class="btn btn-outline btn-sm" style="justify-content:center;"><svg class="icon-svg icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to site</a>
+    </div>
+
+    <!-- MAIN Navigation Group -->
+    <div class="dash-nav-section-label">MAIN</div>
+    <div class="dash-nav-group" role="tablist">
+      <button class="side-link on" data-view="overview"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg> Overview</button>
+      <button class="side-link" data-view="box"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> My Box Builder</button>
+      <button class="side-link" data-view="deliveries"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Deliveries &amp; Calendar</button>
+      <button class="side-link" data-view="orders"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/></svg> Order History</button>
+    </div>
+
+    <!-- ACCOUNT Navigation Group -->
+    <div class="dash-nav-section-label">ACCOUNT</div>
+    <div class="dash-nav-group">
+      <button class="side-link" data-view="plan"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Plan &amp; Billing</button>
+      <button class="side-link" data-view="prefs"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Preferences</button>
+      <button class="side-link" data-view="profile"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Profile Settings</button>
+    </div>
+
+    <!-- Sidebar Bottom Actions -->
+    <div class="dash-sidebar-footer">
+      <a href="weekly-box.html" class="btn btn-gold btn-sm" style="justify-content:center;width:100%;">Customize This Week’s Box</a>
+      <a href="index.html" class="btn btn-outline btn-sm" style="justify-content:center;width:100%;"><svg class="icon-svg icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> SIGN OUT</a>
+    </div>
+  </aside>
+
+  <!-- Main Area -->
+  <div class="dash-main-area">
+    <!-- Topbar Header (Reference Style) -->
+    <header class="dash-topbar" id="dash-topbar">
+      <div class="dash-topbar-left">
+        <button class="dash-mobile-toggle" id="dash-hamburger" aria-label="Open sidebar menu">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="dash-topbar-title" id="topbar-title">Dashboard Overview</h1>
       </div>
-    </aside>
-    <div>
+
+      <div class="dash-topbar-right">
+        <!-- Theme Toggle -->
+        <button class="dash-icon-btn theme-toggle" id="theme-btn" aria-label="Toggle dark mode">
+          <span class="theme-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+
+        <!-- RTL Toggle -->
+        <button class="dash-icon-btn rtl-toggle rtl-btn" id="rtl-btn" aria-label="Toggle RTL/LTR" style="font-size:0.7rem;font-weight:700;">RTL</button>
+
+        <!-- User Profile Chip (Displays "Subscriber") -->
+        <div class="dash-user-chip">
+          <div class="avatar-sm" id="user-initial-header">S</div>
+          <span id="user-name-header">Subscriber</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Full-Screen Main Content -->
+    <main class="dash-content" id="main-content">
       <!-- OVERVIEW -->
       <section class="view on" id="view-overview">
+        <div class="dash-welcome-bar" style="margin-bottom:1.5rem;" data-reveal="fade-up">
+          <h2 style="font-family:var(--font-serif);font-size:1.75rem;font-weight:800;color:var(--text-primary);margin:0 0 0.35rem;">Welcome Back, <span id="welcome-user-name">Subscriber</span>! <svg class="icon-svg" style="width:24px;height:24px;color:var(--color-gold);vertical-align:middle;margin-left:0.35rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></h2>
+          <p style="margin:0;color:var(--text-muted);font-size:var(--text-sm);">Here’s a quick overview of your upcoming farm share box, deliveries and account.</p>
+        </div>
         <div class="next-delivery" data-reveal="fade-up">
           <div><div style="font-size:var(--text-sm);opacity:0.95;" id="sub-status-line"><span class="vec-dot" aria-hidden="true"></span>Subscription ACTIVE · Family Box</div>
           <h2 style="font-family:var(--font-serif);margin:0.25rem 0;" id="next-delivery-title">Next delivery: Sun, Oct 11 · Morning slot</h2>
@@ -193,21 +239,23 @@
           <div style="display:flex;gap:0.6rem;flex-wrap:wrap;"><button class="btn btn-primary btn-sm" id="profile-save">Save profile</button><button class="btn btn-outline btn-sm" id="logout-btn2">Logout</button><a href="admin-dashboard.html" class="btn btn-outline btn-sm">View admin demo <svg class="icon-svg icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
         </div>
       </section>
-    </div>
+    </main>
   </div>
 </div>
-</main>
 <script src="assets/js/main.js"></script><script src="assets/js/animations.js"></script><script src="assets/js/utils.js"></script>
 <script>
 (function(){
   // Session guard (demo-friendly: auto-create demo session)
   let email=null; try{email=localStorage.getItem('hb_session');}catch(e){}
   let users={}; try{users=JSON.parse(localStorage.getItem('hb_users')||'{}');}catch(e2){}
-  if(!email||!users[email]){ email='demo@harvestbox.in'; users[email]=users[email]||{name:'Demo Subscriber',email:email,phone:'+91 98765 43210',plan:'Family Box',freq:'Weekly'}; try{localStorage.setItem('hb_users',JSON.stringify(users));localStorage.setItem('hb_session',email);}catch(e3){} }
+  if(!email||!users[email]){ email='demo@harvestbox.in'; users[email]=users[email]||{name:'Subscriber',email:email,phone:'+91 98765 43210',plan:'Family Box',freq:'Weekly'}; try{localStorage.setItem('hb_users',JSON.stringify(users));localStorage.setItem('hb_session',email);}catch(e3){} }
   const me=users[email];
   document.getElementById('user-name').textContent=me.name||'Subscriber';
   document.getElementById('user-plan').textContent=(me.plan||'Family Box')+' · '+(me.freq||'Weekly');
   document.getElementById('user-initial').textContent=(me.name||'H').charAt(0).toUpperCase();
+  if(document.getElementById('user-initial-header')) document.getElementById('user-initial-header').textContent='S';
+  if(document.getElementById('user-name-header')) document.getElementById('user-name-header').textContent='Subscriber';
+  if(document.getElementById('welcome-user-name')) document.getElementById('welcome-user-name').textContent=(me.name && me.name !== 'Demo Subscriber' ? me.name.split(' ')[0] : 'Subscriber');
   document.getElementById('pf-name').value=me.name||''; document.getElementById('pf-phone').value=me.phone||'';
   document.getElementById('plan-name').textContent=(me.plan||'Family Box')+' · '+(me.freq||'Weekly')+' · ₹599/box';
 

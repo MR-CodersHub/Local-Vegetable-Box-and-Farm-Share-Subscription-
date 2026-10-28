@@ -81,7 +81,33 @@
 [data-theme="dark"] .nav-link { color: rgba(240,235,224,0.85); }
 [data-theme="dark"] .navbar.transparent .nav-link { color: rgba(255,255,255,0.9); }
 
-[data-theme="dark"] .nav-icon-btn { color: rgba(240,235,224,0.85); }
+[data-theme="dark"] .nav-icon-btn {
+  color: rgba(240,235,224,0.9);
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.25);
+  box-shadow: none;
+}
+[data-theme="dark"] .navbar.transparent .nav-icon-btn {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.35);
+}
+[data-theme="dark"] .nav-icon-btn:hover {
+  background: var(--color-forest-600);
+  border-color: var(--color-forest-400);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+[data-theme="dark"] .navbar.transparent .nav-icon-btn:hover {
+  background: var(--color-forest-600);
+  border-color: var(--color-forest-400);
+  color: #fff;
+}
+[data-theme="dark"] .profile-btn[aria-expanded="true"] {
+  background: var(--color-forest-600);
+  border-color: var(--color-forest-400);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
 
 [data-theme="dark"] .btn-outline {
   color: #A6C944;

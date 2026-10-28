@@ -262,8 +262,10 @@
   pointer-events: all;
 }
 .profile-btn[aria-expanded="true"] {
-  background: var(--border-light);
-  color: var(--color-forest);
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(14,59,44,0.28);
 }
 
 /* ================================================================
